@@ -1,6 +1,0 @@
-Kalikan angka yang ada di variabel start dengan 5 pangkat berapa digit angka yang ada di variabel start
-dan algoritma nya masukan ke variabel result.
-
-Contoh:
-let start = 3 => Berarti 3 dikali 5 pangkat 1 (karena variabel start digit angkanya hanya 1)
-let start = 12 => Berarti 12 dikali 5 pangkat 2 (karena variabel start digit angka nya 2)
