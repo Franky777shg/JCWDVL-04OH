@@ -1,0 +1,4 @@
+Tampilkan waktu dalam satuan jam, menit, dan detik jika yang diberikan hanya dalam satuan detik.
+
+Contoh:
+3661 detik => 1 jam 1 menit 1 detik

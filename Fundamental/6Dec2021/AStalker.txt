@@ -1,0 +1,7 @@
+Sebuah string akan dimasukan ke dalam variabel word.
+Jika string tersebut mengandung huruf "a" atau "A" maka variabel result akan berisi
+string baru dengan memberikan titik "." di depan huruf "a" atau "A" tersebut.
+
+Contoh:
+let word = "atlanticA"
+let result = "a.tla.nticA."
