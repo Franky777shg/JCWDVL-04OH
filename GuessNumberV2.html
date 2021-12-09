@@ -1,0 +1,27 @@
+<script>
+  alert("Game penebak angka 🎲");
+
+  main: while (repeat) {
+    let input = +prompt("Masukan angka dari 1 sampai 5:");
+    let random = Math.ceil(Math.random() * 5);
+
+    if (input <= 0 || input > 5) {
+      alert("Input kamu salah!");
+    } else if (input === random) {
+      alert(`COM: ${random}
+  P1: ${input}
+  Nilai tebakan kamu benar! 😊`);
+    } else {
+      alert(`COM: ${random}
+  P1: ${input}
+  Nilai tebakan kamu salah! 😭`);
+    }
+
+    let confirmUser = confirm("Ingin bermain lagi?");
+
+    if (!confirmUser) {
+      alert("Terima kasih sudah bermain");
+      break main;
+    }
+  }
+</script>
