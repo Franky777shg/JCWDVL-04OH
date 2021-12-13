@@ -1,0 +1,15 @@
+<script>
+  let input = prompt("Masukan beberapa angka:"); // "13425"
+
+  let result = [input[0]]; // ["1"]
+
+  for (let i = 0; i < input.length - 1; i++) {
+    if (+input[i] % 2 !== 0 && +input[i + 1] % 2 !== 0) {
+      result.push("-", input[i + 1]);
+    } else {
+      result.push(input[i + 1]);
+    }
+  }
+
+  alert(result.join(""));
+</script>
