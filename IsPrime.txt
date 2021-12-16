@@ -1,1 +1,0 @@
-Buatlah sebuah function yang akan me return hasil apakah sebuah angka termasuk bilangan prima atau tidak.
