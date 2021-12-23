@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: salmon;
+    }
+    table,
+    th,
+    tr,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+  <body>
+    <center>
+      <h1>Random Picker</h1>
+      <input type="text" placeholder="Input Here.." id="input" />
+      <button onclick="onAdd()">Add To List</button>
+      <h2 id="random">Wait...</h2>
+      <button onclick="start()">Start Random</button>
+      <button onclick="stop()">Stop Random</button>
+      <br />
+      <br />
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody id="table-data"></tbody>
+      </table>
+    </center>
+  </body>
+  <script>
+    let data = [];
+
+    let running;
+
+    let onAdd = () => {
+      let newData = document.getElementById("input").value;
+      data.push(newData);
+      document.getElementById("input").value = "";
+      onShowData();
+    };
+
+    let onShowData = () => {
+      let tbody = document.getElementById("table-data");
+
+      let allData = data.map((item, index) => {
+        return `<tr>
+                <td>${index + 1}</td>
+                <td>${item}</td>
+                </tr>`;
+      });
+      tbody.innerHTML = allData.join("");
+    };
+
+    let random = () => {
+      let res = data[Math.floor(Math.random() * data.length)];
+      document.getElementById("random").innerHTML = res;
+    };
+
+    let start = () => {
+      running = setInterval(random, 50);
+    };
+
+    let stop = () => {
+      clearInterval(running);
+    };
+
+    onShowData();
+  </script>
+</html>
