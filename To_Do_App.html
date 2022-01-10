@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #container {
+      background-color: springgreen;
+      width: 40%;
+      height: 50vh;
+    }
+    ul li {
+      text-align: left;
+    }
+  </style>
+  <body>
+    <center>
+      <div id="container">
+        <h1>To Do App</h1>
+        <input type="text" id="input-user" />
+        <button onclick="onAdd()">ADD</button>
+        <ul id="list">
+          <!-- nanti di sini akan diisi oleh function onShow -->
+        </ul>
+      </div>
+    </center>
+  </body>
+  <script>
+    let database = ["makan", "coding", "tidur"];
+
+    let onAdd = () => {
+      let newTodo = document.getElementById("input-user").value;
+
+      database.push(newTodo);
+
+      onShow();
+
+      document.getElementById("input-user").value = "";
+    };
+
+    let onShow = () => {
+      let list = document.getElementById("list");
+
+      let colectionsOfTodo = database.map((item, index) => {
+        return `<li>${item}&nbsp <button onclick="onEdit(${index})">EDIT</button> &nbsp <button onclick="onDelete(${index})">DELETE</button></li>`;
+      });
+
+      list.innerHTML = colectionsOfTodo.join("");
+    };
+
+    let onDelete = (index) => {
+      database.splice(index, 1);
+
+      onShow();
+    };
+
+    let onEdit = (index) => {
+      let editTodo = prompt("Ubah To Do");
+
+      database[index] = editTodo;
+
+      onShow();
+    };
+
+    onShow();
+  </script>
+</html>
