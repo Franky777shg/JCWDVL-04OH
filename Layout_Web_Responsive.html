@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      /* background-color: lightblue; */
+      padding: 0 10px;
+    }
+
+    /* 0 - 320px */
+    #orange {
+      height: 160px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #orange1,
+    #orange2 {
+      background-color: orange;
+      flex-basis: 47%;
+    }
+
+    #green {
+      background-color: rgb(194, 240, 29);
+      height: 120px;
+      margin-bottom: 30px;
+    }
+
+    #blue {
+      height: 700px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    #blue1,
+    #blue2,
+    #blue3 {
+      background-color: steelblue;
+      flex-basis: 32%;
+    }
+
+    #gray {
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #grayUp,
+    #grayDown {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 50%;
+    }
+
+    #grayUp,
+    #grayUp1,
+    #grayDown1 {
+      margin-bottom: 5px;
+    }
+
+    #grayUp1,
+    #grayUp2,
+    #grayDown1,
+    #grayDown2 {
+      background-color: rgb(206, 205, 205);
+      flex-basis: 50%;
+    }
+
+    @media only screen and (min-width: 321px) {
+      #green {
+        height: 200px;
+      }
+      #blue {
+        height: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      #gray {
+        height: 200px;
+      }
+      #grayUp,
+      #grayDown {
+        flex-direction: row;
+      }
+
+      #grayUp1,
+      #grayDown1 {
+        margin-bottom: 0;
+        margin-right: 10px;
+      }
+
+      @media only screen and (min-height: 769px) {
+        #orange {
+          flex-direction: row;
+          height: 80px;
+        }
+
+        body {
+          padding: 0 30px;
+        }
+
+        #orange1,
+        #orange2 {
+          flex-basis: 49.2%;
+        }
+
+        #green {
+          height: 300px;
+        }
+
+        #blue {
+          height: 200px;
+          flex-direction: row;
+        }
+
+        #gray {
+          height: 140px;
+          flex-direction: row;
+        }
+
+        #grayUp {
+          margin-bottom: 0;
+          margin-right: 10px;
+        }
+      }
+    }
+  </style>
+  <body>
+    <div id="orange">
+      <div id="orange1"></div>
+      <div id="orange2"></div>
+    </div>
+    <div id="green"></div>
+    <div id="blue">
+      <div id="blue1"></div>
+      <div id="blue2"></div>
+      <div id="blue3"></div>
+    </div>
+    <div id="gray">
+      <div id="grayUp">
+        <div id="grayUp1">gray up 1</div>
+        <div id="grayUp2">gray up 2</div>
+      </div>
+      <div id="grayDown">
+        <div id="grayDown1">gray down 1</div>
+        <div id="grayDown2">gray down 2</div>
+      </div>
+    </div>
+  </body>
+</html>
