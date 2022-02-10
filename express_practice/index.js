@@ -11,7 +11,8 @@ server.get("/", (req, res) => {
   res.status(200).send("<h1>Welcome to my API</h1>");
 });
 
-const { productRouter } = require("./routers");
+const { productRouter, userRouter } = require("./routers");
 server.use("/product", productRouter);
+server.use("/user", userRouter);
 
 server.listen(PORT, () => console.log(`Running at PORT : ${PORT}`));
