@@ -1,4 +1,5 @@
 const { db } = require("../database");
+const { generateQueryEdit } = require("../helpers/generateQuery");
 
 module.exports = {
   getAllProducts: (req, res) => {
@@ -53,5 +54,22 @@ module.exports = {
       });
     });
   },
-  // edit product belum
+  editProduct: (req, res) => {
+    let id = +req.params.id;
+
+    let editQuery = `update products set ${generateQueryEdit(
+      req.body
+    )} where id = ${id}`;
+
+    db.query(editQuery, (err, result) => {
+      if (err) return res.status(400).send(err);
+
+      let getQuery = "select * from products";
+
+      db.query(getQuery, (err2, result2) => {
+        if (err2) return res.status(400).send(err2);
+        res.status(200).send(result2);
+      });
+    });
+  },
 };
